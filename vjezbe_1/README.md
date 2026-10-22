@@ -3,6 +3,16 @@
 Jednostavna frontend aplikacija (popis zadataka) napravljena s **Vue 3** i **Vite**.
 Build generira statični sadržaj (`index.html` + JS/CSS) u direktoriju `dist/`.
 
+## Linkovi za Render.com
+Nalaze se u links.txt ili ovdje:
+```
+FRONTEND
+https://rs-vjezbe-1x9k.onrender.com/
+
+API
+https://rs-vjezbe-api.onrender.com
+```
+
 ## Pokretanje
 
 ```bash
