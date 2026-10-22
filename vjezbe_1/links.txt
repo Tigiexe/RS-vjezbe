@@ -1,0 +1,6 @@
+Frontend
+https://rs-vjezbe-1x9k.onrender.com/
+
+
+API
+https://rs-vjezbe-api.onrender.com/api/zadaci
