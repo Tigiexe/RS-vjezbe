@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Vježbe 1 – REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Popis endpointa",
+      "request": { "method": "GET", "url": "{{baseUrl}}/" }
+    },
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/health" }
+    },
+    {
+      "name": "Svi zadaci",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/zadaci" }
+    },
+    {
+      "name": "Gotovi zadaci (filter)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/zadaci?gotov=true",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "zadaci"],
+          "query": [{ "key": "gotov", "value": "true" }]
+        }
+      }
+    },
+    {
+      "name": "Jedan zadatak",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/zadaci/2" }
+    },
+    {
+      "name": "Novi zadatak",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tekst\": \"Testirati API u Postmanu\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/api/zadaci"
+      }
+    },
+    {
+      "name": "Izmjena zadatka",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"gotov\": true\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/api/zadaci/2"
+      }
+    },
+    {
+      "name": "Brisanje zadatka",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/api/zadaci/1" }
+    },
+    {
+      "name": "Greška – POST bez teksta (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/api/zadaci"
+      }
+    },
+    {
+      "name": "Greška – nepostojeći zadatak (404)",
+      "request": { "method": "GET", "url": "{{baseUrl}}/api/zadaci/999" }
+    }
+  ]
+}

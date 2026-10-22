@@ -47,6 +47,39 @@ h1 {
   color: var(--naglasak);
 }
 
+.zaglavlje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.podnaslov a {
+  color: inherit;
+  word-break: break-all;
+}
+
+.greska {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  background: rgba(229, 72, 77, 0.12);
+  color: #e5484d;
+  font-size: 0.9rem;
+}
+
+.greska .link {
+  color: #e5484d;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 .podnaslov {
   margin: 0.25rem 0 1.5rem;
   color: var(--prigušeno);
