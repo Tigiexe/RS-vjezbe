@@ -1,0 +1,133 @@
+:root {
+  --pozadina: #f4f6f8;
+  --kartica: #ffffff;
+  --tekst: #1f2933;
+  --prigušeno: #8a94a0;
+  --rub: #e3e7eb;
+  --naglasak: #41b883;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--tekst);
+  background: var(--pozadina);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --pozadina: #15191e;
+    --kartica: #1e242b;
+    --tekst: #e6e9ec;
+    --prigušeno: #7d8793;
+    --rub: #2c343d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+}
+
+.kartica {
+  width: 100%;
+  max-width: 480px;
+  background: var(--kartica);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0;
+  color: var(--naglasak);
+}
+
+.podnaslov {
+  margin: 0.25rem 0 1.5rem;
+  color: var(--prigušeno);
+  font-size: 0.9rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.unos {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.unos input {
+  flex: 1;
+  font: inherit;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--rub);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+}
+
+.unos button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: var(--naglasak);
+  color: white;
+}
+
+.filteri {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.filteri button {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--rub);
+  background: transparent;
+  color: inherit;
+  text-transform: capitalize;
+}
+
+.filteri button.aktivan {
+  border-color: var(--naglasak);
+  color: var(--naglasak);
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prazno {
+  color: var(--prigušeno);
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--prigušeno);
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--prigušeno);
+  padding: 0;
+}
+
+.link:hover {
+  color: var(--naglasak);
+}
